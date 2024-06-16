@@ -109,13 +109,26 @@ p{
   background-color: var(--loader-color);
   margin: -0 auto 0 auto;
 }
-
+.social-icons .bi{
+  font-size: 2rem;
+  border: 1px solid #424345 ;
+  padding: 2%; 
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  color: #424345;
+}
+.bi:hover{
+  color: white;
+  border: 1px solid white;
+  transition: all 0.5s ease;
+}
 
 .bemvindo{
-  border-radius: 12px 0px 0px 12px;
+  border-radius: 4% 0px 0px 4%;
   background-color: var(--loader-color);
 }
 .login{
   border: 1px solid #424345;
-  border-radius: 0px 12px 12px 0px;
+  border-top-right-radius: 4%;
+  border-bottom-right-radius: 4%;
 }

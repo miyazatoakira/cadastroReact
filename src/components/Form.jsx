@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Form = ({ type, id, msg, onChange }) => {
+const Form = ({ type, id, msg, onChange, formClass }) => {
     return (
         <div>
-            <div className="form-floating my-5 ms-1">
+            <div className={`form-floating ${formClass}`}>
                 <input 
                     type={type} 
                     className="form-control" 

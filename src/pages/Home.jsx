@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import logo from '../logo.svg';
 import Form from "../components/Form";
+import Checkbox from '../components/Checkbox';
 import viteLogo from '../vite.svg';
 
 const Home = () => {
@@ -38,18 +39,26 @@ const Home = () => {
                   </div>
               </div>
           </div>
-          <div className="row justify-content-center align-items-center text-center align-items-stretch">
-            <div className="col-5 bemvindo">
-                <h1 className="h1 Home-title text-center">Bem-vindo </h1>
-                <p className="subtitle">Cadastre sua conta e venha fazer parte da nossa equipe</p>
-                
+          <div className="row justify-content-center">
+            <div className="col-5 bemvindo pt-5 text-center">
+                <h1 className="h1 Home-title text-center mt-4">Bem-vindo </h1>
+                <p className="subtitle text-center mt-5">Cadastre sua conta e venha fazer parte da nossa equipe</p>
+                <button className="btn btn-outline-dark mt-3 rounded-pill">Cadastrar-se</button>
+                <p className="subtitle text-center mt-5">Ou entre</p>
+                <div className="social-icons mt-2 ">
+                    <i className="bi bi-google me-3 rounded-circle "></i>
+                    <i className="bi bi-facebook me-3 rounded-circle "></i>
+                    <i className="bi bi-linkedin rounded-circle "></i>
+                </div>
             </div>
-              <div className="login col-4">
-                <h1 className="h1 text-start">LOGIN <img className='react-logo' src={logo} alt="React Logo" style={{width: "2em"}} /></h1>
-                  <Form type="text" msg="Usuário" id="user" onChange={handleChange}  />
-                  <Form type="password" msg="Senha" id="password" onChange={handleChange} />
-                  <button className="btn btn-outline-primary w-100" onClick={handleSubmit}>Entrar</button>
-                  <p className='fs-6 mt-2'>Ainda não tem uma conta ? </p>
+              <div className="login col-7 text-center">
+                <h2 className="h2 mt-5 Home-title text-center">
+                    <img src={viteLogo} alt="Vite Logo" className='me-4' />
+                    ENTRAR <img className='react-logo' src={logo} alt="React Logo" style={{width: "2em"}} /></h2>
+                  <Form type="text" formClass="my-5 mx-5 me-4" msg="Usuário" id="user" onChange={handleChange}  />
+                  <Form type="password" formClass="mb-4 mx-5 me-4" msg="Senha" id="password" onChange={handleChange} />
+                  <Checkbox checkboxClass="mx-5 text-start" msg="Lembre de mim" value="rememberMeChecked" id="rememberMe" />
+                  <button className="btn btn-primary mt-2 mb-5 rounded-pill w-75" onClick={handleSubmit}>Entrar</button>
               </div>
           </div>
 

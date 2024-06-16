@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
+import Cadastro from './pages/Cadastro';
 import './App.css';
 
 const App = () => {
@@ -9,6 +10,7 @@ const App = () => {
 
       <Routes>
         <Route path='/' element={<Home /> }></Route>
+        <Route path='/Cadastro' element={<Cadastro/>}></Route>
       </Routes>
 
     </div>

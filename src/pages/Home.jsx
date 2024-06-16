@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
+import viteLogo from '../vite.svg';
 import logo from '../logo.svg';
 import Form from "../components/Form";
 import Checkbox from '../components/Checkbox';
-import viteLogo from '../vite.svg';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [values, setValues] = useState({ user: "", password: "" });
@@ -28,6 +29,7 @@ const Home = () => {
   }
 
   return (
+    <div>
       <div className="container">
           <div aria-live="polite" aria-atomic="true" className="d-flex justify-content-center align-items-center w-100">
               <div className={`toast align-items-center ${ToastColor} border-0 ${showToast ? "show" : ""}`}>
@@ -43,7 +45,7 @@ const Home = () => {
             <div className="col-5 bemvindo pt-5 text-center">
                 <h1 className="h1 Home-title text-center mt-4">Bem-vindo </h1>
                 <p className="subtitle text-center mt-5">Cadastre sua conta e venha fazer parte da nossa equipe</p>
-                <button className="btn btn-outline-dark mt-3 rounded-pill">Cadastrar-se</button>
+                <Link to="/Cadastro" className="btn btn-outline-dark mt-3 rounded-pill">Cadastrar-se</Link>
                 <p className="subtitle text-center mt-5">Ou entre</p>
                 <div className="social-icons mt-2 ">
                     <i className="bi bi-google me-3 rounded-circle "></i>
@@ -64,6 +66,7 @@ const Home = () => {
 
 
       </div>
+    </div>
   );
 }
 

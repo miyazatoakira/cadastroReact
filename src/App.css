@@ -121,6 +121,7 @@ p{
   color: white;
   border: 1px solid white;
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 .bemvindo{
@@ -132,3 +133,9 @@ p{
   border-top-right-radius: 4%;
   border-bottom-right-radius: 4%;
 }
+
+/* Cadastro */
+  .cadastro{
+    border: 1px solid #424345;
+    border-radius: 15px;
+  }

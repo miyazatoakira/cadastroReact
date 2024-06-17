@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Checkbox = ({value, id, msg, checkboxClass}) => {
+const Checkbox = ({value, id, msg, checkboxClass, type}) => {
   return (
     <div>
       <div className={`form-check ${checkboxClass}`}>
-        <input className="form-check-input" type="checkbox" value={value} id={id} />
+        <input className="form-check-input" type={type} value={value} id={id} />
         <label className="form-check-label" htmlFor={id}>{msg}</label>
       </div>
     </div>

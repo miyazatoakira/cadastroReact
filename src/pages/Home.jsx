@@ -54,13 +54,13 @@ const Home = () => {
                 </div>
             </div>
               <div className="login col-7 text-center">
-                <h2 className="h2 mt-5 Home-title text-center">
+                <h2 className="h2 mt-5 Home-title text-start ms-5">
                     <img src={viteLogo} alt="Vite Logo" className='me-4' />
                     ENTRAR <img className='react-logo' src={logo} alt="React Logo" style={{width: "2em"}} /></h2>
                   <Form type="text" formClass="my-5 mx-5 me-4" msg="Usuário" id="user" onChange={handleChange}  />
                   <Form type="password" formClass="mb-2 mx-5 me-4" msg="Senha" id="password" onChange={handleChange} />
                   <Checkbox type="checkbox" checkboxClass="mx-5 mb-4 text-start" msg="Lembre de mim" value="rememberMeChecked" id="rememberMe" />
-                  <button className="btn btn-primary mt-2 mb-5 rounded-pill w-75" onClick={handleSubmit}>Entrar</button>
+                  <button className="btn btn-primary mt-2 mb-5 btn-lg rounded-pill w-75" onClick={handleSubmit}>Entrar</button>
               </div>
           </div>
 

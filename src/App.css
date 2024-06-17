@@ -105,14 +105,13 @@ p{
 /* MAIN SECTION */
 .line {
   width: 60px;
-  height: 4px;
+  height: 8px;
   background-color: var(--loader-color);
-  margin: -0 auto 0 auto;
 }
 .social-icons .bi{
   font-size: 2rem;
   border: 1px solid #424345 ;
-  padding: 2%; 
+  padding: 2%;
   padding-left: 2.5%;
   padding-right: 2.5%;
   color: #424345;

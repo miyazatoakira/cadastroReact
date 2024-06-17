@@ -10,6 +10,7 @@ const Form = ({ type, id, msg, onChange, formClass, isReq }) => {
                     id={id}
                     placeholder={msg}
                     onChange={onChange}
+                    required
                 />
                 <label className="ms-2" htmlFor={id}>{msg}</label>
             </div>

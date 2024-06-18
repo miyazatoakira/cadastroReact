@@ -111,7 +111,9 @@ p{
 .social-icons .bi{
   font-size: 2rem;
   border: 1px solid #424345 ;
-  padding: 2%;
+  padding: 1.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
   color: #424345;
 }
 .bi:hover{

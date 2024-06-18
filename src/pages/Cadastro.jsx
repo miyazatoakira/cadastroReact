@@ -2,20 +2,27 @@ import React, { useState } from 'react';
 import Form from '../components/Form';
 import Checkbox from '../components/Checkbox';
 import { useNavigate } from 'react-router-dom';
-import { useEmail } from '../EmailContext';
+import { userContext } from '../EmailContext';
 
 
 const Cadastro = () => {
-  const [email, setEmail] = useState('');
-  const [user, setUser] = useState('');
+  const [valores, setValores] = ({email:"", user: ""})
 
-  const {setEmail: setEmailContext, setUser: setUserContext} = useEmail();
+  const {setUserData} = useContext(userContext);
+
   const navigate = useNavigate();
+
+  const handleChange = (event) =>{
+    setValores({ ...valores, [event.target.id]: event.target.value });
+
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setContext(user);
-    setContext(email)
+    setUserData({
+      userName: valores.user,
+      emailUser: valores.email,
+    })
     navigate('/ConfCadastro')
   }
 
@@ -30,12 +37,12 @@ const Cadastro = () => {
           <div className="col-10">
             <div className="input-group mt-4">
               <span className="input-group-text" id="basic-addon1">@</span>
-              <input type="text" className="form-control" placeholder="Username" onChange={(e) => setUser(e.target.value)} aria-label="Usuário" aria-describedby="basic-addon1" required/>
+              <input type="text" className="form-control" placeholder="Username" onChange={handleChange} aria-label="Usuário" aria-describedby="basic-addon1" required/>
             </div>
           </div>
           <div className="col-12 col-md-5">
             <Form formClass="my-4" id="firstName" msg="Insira Primeiro Nome*" type="text" />
-            <Form formClass="my-4" id="email" msg="Insira seu E-mail*" type="email" onChange={(e) => setEmail(e.target.value)} />
+            <Form formClass="my-4" id="email" msg="Insira seu E-mail*" type="email" onChange={handleChange} />
             <Form formClass="my-4" id="password" msg="Insira senha*" type="password" />
             <Checkbox type="radio" checkboxClass="radioMale text-start" nameIn="Sexo" msg="Masculino" value="Masculino" id="radioMale" />
           </div>

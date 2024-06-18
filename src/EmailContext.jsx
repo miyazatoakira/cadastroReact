@@ -2,28 +2,16 @@ import React, { createContext, useContext, useState} from 'react';
 
 const EmailContext = createContext(null);
 
-export function useEmail(){
+export function userContext(){
     return useContext(EmailContext);
 }
 
 export const EmailProvider = ({children}) =>{
-    const [email, setEmail] = useState('');
-    const [user, setUser] = useState('')
+    const [userData, setUserData] = useState({userName: "", emailUser: ""});
 
-    const setEmailValue = (userEmail) =>{
-        setEmail(userEmail);
-    };
-
-    const setUserValue = (userName) =>{
-        setUser(userName);
-    }
-    const clearAlll = () =>{
-        setEmail(null);
-        setUser(null);
-    }
 
     return(
-            <EmailContext.Provider value={{email, user, setEmail: setEmailValue, setUser: setUserValue}} >
+            <EmailContext.Provider value={{userData, setUserData}}>
                 {children}
             </EmailContext.Provider>
     )

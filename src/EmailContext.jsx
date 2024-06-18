@@ -8,17 +8,22 @@ export function useEmail(){
 
 export const EmailProvider = ({children}) =>{
     const [email, setEmail] = useState('');
+    const [user, setUser] = useState('')
 
     const setEmailValue = (userEmail) =>{
         setEmail(userEmail);
     };
 
-    const clearEmail = () =>{
-        setEmail(null)
+    const setUserValue = (userName) =>{
+        setUser(userName);
+    }
+    const clearAlll = () =>{
+        setEmail(null);
+        setUser(null);
     }
 
     return(
-            <EmailContext.Provider value={{email, setEmail: setEmailValue, clearEmail}} >
+            <EmailContext.Provider value={{email, user, setEmail: setEmailValue, setUser: setUserValue}} >
                 {children}
             </EmailContext.Provider>
     )

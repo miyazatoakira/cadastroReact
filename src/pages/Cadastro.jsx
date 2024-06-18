@@ -7,12 +7,15 @@ import { useEmail } from '../EmailContext';
 
 const Cadastro = () => {
   const [email, setEmail] = useState('');
-  const {setEmail: setEmailContext} = useEmail();
+  const [user, setUser] = useState('');
+
+  const {setEmail: setEmailContext, setUser: setUserContext} = useEmail();
   const navigate = useNavigate();
 
-  const handleSubmit = (event) =>{
+  const handleSubmit = (event) => {
     event.preventDefault();
-    setEmailContext(email);
+    setContext(user);
+    setContext(email)
     navigate('/ConfCadastro')
   }
 
@@ -23,6 +26,12 @@ const Cadastro = () => {
           <div className="col-12 col-md-10">
             <h1 className="h1 Home-title text-start">Cadastre-se</h1>
             <div className="line"></div>
+          </div>
+          <div className="col-10">
+            <div className="input-group mt-4">
+              <span className="input-group-text" id="basic-addon1">@</span>
+              <input type="text" className="form-control" placeholder="Username" onChange={(e) => setUser(e.target.value)} aria-label="Usuário" aria-describedby="basic-addon1" required/>
+            </div>
           </div>
           <div className="col-12 col-md-5">
             <Form formClass="my-4" id="firstName" msg="Insira Primeiro Nome*" type="text" />
@@ -87,7 +96,7 @@ const Cadastro = () => {
               <Checkbox type="checkbox" nameIn="terns" checkboxClass="text-start" msg="Concordo com os termos" value="agree" id="terms" />
             </div>
             <div className="col-12 mt-2">
-              <button  className="btn btn-lg btn-outline-success" type="submit">Cadastrar-se</button>
+              <button className="btn btn-lg btn-outline-success" type="submit">Cadastrar-se</button>
             </div>
           </div>
         </form>

@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
-import { EmailProvider } from './EmailContext.jsx'
+import { EmailNameProvider } from './EmailNameContext'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
       <BrowserRouter>
-        <EmailProvider>
+        <EmailNameProvider>
           <App />
-       </EmailProvider>
+       </EmailNameProvider>
       </BrowserRouter>
   </React.StrictMode>,
 )

@@ -17,7 +17,7 @@ const ConfCadastro = () => {
             <div className="card-header">Sucesso !</div>
             <div className="card-body">
               <h5 className="card-title">Você receberá um e-mail em instantes.</h5>
-              <p className="card-text">Foi enviado um email para <span className="Home-title">{data}</span>, você receberá a confirmação de cadastro em instantes !</p>
+              <p className="card-text">Foi enviado um email para <span className="Home-title">{email}</span>, você receberá a confirmação de cadastro em instantes !</p>
             </div>
           </div>
           </div>

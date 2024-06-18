@@ -14,10 +14,7 @@ const Cadastro = () => {
   };
 
   const handleSaveEmail = () =>{
-    navigate({
-      pathname: '/ConfCadastro',
-      state: {data: email}
-    });
+    navigate('/ConfCadastro', {state: {email}});
   };
 
 

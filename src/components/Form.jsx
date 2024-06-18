@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Form = ({ type, id, msg, onChange, formClass, isReq }) => {
+const Form = ({ type, id, msg, onChange, formClass }) => {
     return (
         <div>
             <div className={`form-floating ${formClass}`}>
@@ -10,7 +10,7 @@ const Form = ({ type, id, msg, onChange, formClass, isReq }) => {
                     id={id}
                     placeholder={msg}
                     onChange={onChange}
-                    required
+                    
                 />
                 <label className="ms-2" htmlFor={id}>{msg}</label>
             </div>

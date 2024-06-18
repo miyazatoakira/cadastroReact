@@ -1,12 +1,8 @@
 import React from "react"
-import Cadastro from './Cadastro';
-import {useLocation} from 'react-router-dom';
-
+import { useEmail } from "../EmailContext";
 const ConfCadastro = () => {
-  const location = useLocation();
 
-  const email = location.state || {data: 'nada recebido'};
-
+  const { email } = useEmail();
 
   return(
     <div>

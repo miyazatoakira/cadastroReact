@@ -4,17 +4,18 @@ import Home from './pages/Home';
 import Cadastro from './pages/Cadastro';
 import ConfCadastro from './pages/ConfCadastro';
 import './App.css';
+import { EmailProvider } from './EmailContext';
 
 const App = () => {
   return (
     <div className='App container-fluid'>
-
-      <Routes>
-        <Route path='/' element={<Home /> }></Route>
-        <Route path='/Cadastro' element={<Cadastro/>}></Route>
-        <Route path='/ConfCadastro' element={<ConfCadastro/>}></Route>
-      </Routes>
-
+      <EmailProvider>
+        <Routes>
+          <Route path='/' element={<Home /> }></Route>
+          <Route path='/Cadastro' element={<Cadastro/>}></Route>
+          <Route path='/ConfCadastro' element={<ConfCadastro/>}></Route>
+        </Routes>
+      </EmailProvider>
     </div>
   )
 }

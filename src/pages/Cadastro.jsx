@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
 import Form from '../components/Form';
 import Checkbox from '../components/Checkbox';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useEmail } from '../EmailContext';
 
 
 const Cadastro = () => {
   const [email, setEmail] = useState('');
   const {setEmail: setEmailContext} = useEmail();
+  const navigate = useNavigate();
 
   const handleSubmit = (event) =>{
     event.preventDefault();
     setEmailContext(email);
+    navigate('/ConfCadastro')
   }
 
   return (
     <div>
       <div className="container cadastro mt-5">
-        <form className="row text-center need-validation justify-content-center py-4" onSubmit={handleSubmit} novalidated>
+        <form className="row text-center was-validated justify-content-center py-4" onSubmit={handleSubmit} novalidated>
           <div className="col-10 ">
             <h1 className="h1 Home-title text-start">Cadastre-se</h1>
             <div className="line"></div>
@@ -86,7 +88,7 @@ const Cadastro = () => {
               <Checkbox type="checkbox" nameIn="terns" checkboxClass="text-start" msg="Concordo com os termos" value="agree" id="terms" />
             </div>
             <div className="col-12">
-              <Link to='/ConfCadastro' className="btn btn-lg btn-outline-success" type="submit">Cadastrar-se</Link>
+              <button  className="btn btn-lg btn-outline-success" type="submit">Cadastrar-se</button>
             </div>
           </div>
         </form>

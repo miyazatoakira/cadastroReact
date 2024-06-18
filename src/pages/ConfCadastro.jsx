@@ -5,7 +5,7 @@ import {useLocation} from 'react-router-dom';
 const ConfCadastro = () => {
   const location = useLocation();
 
-  const {data} = location.state || {data: 'nada recebido'};
+  const email = location.state || {data: 'nada recebido'};
 
 
   return(

@@ -10,7 +10,7 @@ const Cadastro = () => {
   const navigate = useNavigate();
 
   const handleChange = (event) =>{
-    setEmail({...email, [event.target.id]: event.target.value});
+    setEmail({event.target.value});
   };
 
   const handleSaveEmail = () =>{

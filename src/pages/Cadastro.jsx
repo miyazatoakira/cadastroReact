@@ -1,22 +1,37 @@
 import React, {useState, useEffect} from 'react';
 import Form from '../components/Form';
 import Checkbox from '../components/Checkbox';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Cadastro = () => {
+  const [email, setEmail] = useState('');
+
+  const navigate = useNavigate();
+
+  const handleChange = (event) =>{
+    setEmail({...email, [event.target.id]: event.target.value});
+  };
+
+  const handleSaveEmail = () =>{
+    navigate({
+      pathname: '/ConfCadastro',
+      state: {data: email}
+    });
+  };
+
 
   return (
     <div>
-      <div className="container cadastro">
-        <form className="row text-center was-validated justify-content-center py-4" novalidated>
-        <div className="col-10">
+      <div className="container cadastro mt-5">
+        <form className="row text-center justify-content-center py-4" novalidated>
+        <div className="col-10 col-sm-12">
           <h1 className="h1 Home-title text-start">Cadastre-se</h1>
           <div className="line"></div>
         </div>
           <div className="col-5 col-sm-12">
             <Form formClass="my-4" id="firstName" msg="Insira Primeiro Nome*" type="text"  />
-            <Form formClass="my-4" id="email" msg="Insira seu E-mail*" type="email"/>
+            <Form formClass="my-4" id="email" msg="Insira seu E-mail*" type="email" onChange={handleChange} />
             <Form formClass="my-4" id="password" msg="Insira senha*" type="password"/>
             <Checkbox type="radio" checkboxClass="radioMale text-start" nameIn="Sexo" msg="Masculino" value="Masculino" id="radioMale"/>
             <Checkbox type="radio" checkboxClass="radioFemale d-sm-block text-start" nameIn="Sexo" msg="Feminino" value="Feminino" id="radioFemale"/>
@@ -81,7 +96,7 @@ const Cadastro = () => {
               <Checkbox type="checkbox" nameIn="terns" checkboxClass="text-start" msg="Concordo com os termos" value="agree" id="terms"/>
             </div>
             <div className="col-12">
-              <Link to="/ConfCadastro" className="btn btn-lg btn-outline-success" type="submit">Cadastrar-se</Link>
+              <button onClick={handleSaveEmail} className="btn btn-lg btn-outline-success" type="submit">Cadastrar-se</button>
             </div>
           </div>
         </form>

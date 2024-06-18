@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Form from '../components/Form';
 import Checkbox from '../components/Checkbox';
 import { useNavigate } from 'react-router-dom';
@@ -6,9 +6,9 @@ import { userContext } from '../EmailContext';
 
 
 const Cadastro = () => {
-  const [valores, setValores] = ({email:"", user: ""})
-
   const {setUserData} = useContext(userContext);
+  const [valores, setValores] = ({email:'', user: '',});
+
 
   const navigate = useNavigate();
 

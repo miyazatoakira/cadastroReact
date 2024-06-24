@@ -3,30 +3,38 @@ import viteLogo from '../vite.svg';
 import logo from '../logo.svg';
 import Form from "../components/Form";
 import Checkbox from '../components/Checkbox';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useEmailName } from '../EmailNameContext';
+
 
 const Home = () => {
-  const [values, setValues] = useState({ user: "", password: "" });
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
+  const { setUserDetails } = useEmailName();
+  const navigate = useNavigate();
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
   const [ToastColor, setToastColor] = useState("");
 
-  const handleChange = (event) => {
-      setValues({ ...values, [event.target.id]: event.target.value });
+
+  const handleSubmit = (event) => {
+    console.log(name, password)
+      if (password === "1234") {
+        event.preventDefault();
+            // Define o nome no contexto
+        setUserDetails(name);
+        // Navega para a página de confirmação de cadastro
+        navigate('/ConfCadastro');
+    }
+    else {
+        setToastMessage("Usuário Inválido");
+        setToastColor("text-bg-danger");
+    }
+
+    setShowToast(true)
   }
 
-  const handleSubmit = () => {
-      console.log(values.user, values.password)
-      if (values.user === "administrador" && values.password === "1234") {
-          setToastMessage("Usuário válido ! Bem-vindo !");
-          setToastColor("text-bg-success");
-      }
-      else {
-          setToastMessage("Usuário Inválido");
-          setToastColor("text-bg-danger");
-      }
-      setShowToast(true);
-  }
+
 
   return (
     <div>
@@ -53,15 +61,15 @@ const Home = () => {
                     <i className="bi bi-linkedin rounded-circle "></i>
                 </div>
             </div>
-              <div className="login col-7 text-center">
-                <h2 className="h2 mt-5 Home-title text-start ms-5">
-                    <img src={viteLogo} alt="Vite Logo" className='me-4' />
-                    ENTRAR <img className='react-logo' src={logo} alt="React Logo" style={{width: "2em"}} /></h2>
-                  <Form type="text" formClass="my-5 mx-5 me-4" msg="Usuário" id="user" onChange={handleChange}  />
-                  <Form type="password" formClass="mb-2 mx-5 me-4" msg="Senha" id="password" onChange={handleChange} />
-                  <Checkbox type="checkbox" checkboxClass="mx-5 mb-4 text-start" msg="Lembre de mim" value="rememberMeChecked" id="rememberMe" />
-                  <button className="btn btn-primary mt-2 mb-5 btn-lg rounded-pill w-75" onClick={handleSubmit}>Entrar</button>
-              </div>
+            <form onSubmit={handleSubmit}  className="login col-7 text-center">
+              <h2 className="h2 mt-5 Home-title text-start ms-5">
+                  <img src={viteLogo} alt="Vite Logo" className='me-4' />
+                  ENTRAR <img className='react-logo' src={logo} alt="React Logo" style={{width: "2em"}} /></h2>
+                <Form type="text" formClass="my-5 mx-5 me-4" msg="Usuário" id="user" onChange={(e) => setName(e.target.value)}  />
+                <Form type="password" formClass="mb-2 mx-5 me-4" msg="Senha" id="password" onChange={(e) => setPassword(e.target.value)} />
+                <Checkbox type="checkbox" checkboxClass="mx-5 mb-4 text-start" msg="Lembre de mim" value="rememberMeChecked" id="rememberMe" />
+                <button className="btn btn-primary mt-2 mb-5 btn-lg rounded-pill w-75" >Entrar</button>
+            </form>
           </div>
 
 

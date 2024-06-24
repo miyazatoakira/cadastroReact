@@ -138,3 +138,9 @@ p{
     border: 1px solid #424345;
     border-radius: 15px;
   }
+
+  .form-floating input .bi{
+    position: absolute;
+
+    transform: translateY(-100%);
+  }

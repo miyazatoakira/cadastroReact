@@ -27,8 +27,14 @@ const Cadastro = () => {
                         <h1 className="h1 Home-title text-start">Cadastre-se</h1>
                         <div className="line"></div>
                     </div>
+                    <div className="col-10">
+                    <div className="input-group mt-4">
+                    <span className="input-group-text" id="basic-addon1">@</span>
+                    <input type="text" class="form-control" placeholder="Usuário" aria-label="Username"  onChange={(e) => setName(e.target.value)} aria-describedby="basic-addon1"/>
+                    </div>
+                    </div>
                     <div className="col-5">
-                        <Form formClass="my-4" id="firstName" msg="Insira Primeiro Nome*" type="text" onChange={(e) => setName(e.target.value)} />
+                        <Form formClass="my-4" id="firstName" msg="Insira Primeiro Nome*" type="text"  />
                         <Form formClass="my-4" id="email" msg="Insira seu E-mail*" type="email" onChange={(e) => setEmail(e.target.value)} />
                         <Form formClass="my-4" id="password" msg="Insira senha*" type="password" />
                         <Checkbox type="radio" checkboxClass="radioMale text-start" nameIn="Sexo" msg="Masculino" value="Masculino" id="radioMale" />

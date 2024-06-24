@@ -37,12 +37,15 @@ const Home = () => {
     }
 
     setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false);
+    },1500);
   };
 
   return (
     <div>
       <div className="container">
-        <div aria-live="polite" aria-atomic="true" className="d-flex justify-content-center align-items-center w-100">
+        <div aria-live="polite" aria-atomic="true" className="d-flex mb-5 justify-content-center align-items-center w-100">
           <div className={`toast align-items-center ${ToastColor} border-0 ${showToast ? "show" : ""}`}>
             <div className="d-flex">
               <div className="toast-body">
@@ -69,7 +72,7 @@ const Home = () => {
               <img src={viteLogo} alt="Vite Logo" className='me-4' />
               ENTRAR <img className='react-logo' src={logo} alt="React Logo" style={{ width: "2em" }} />
             </h2>
-            <Form icon="bi bi-person-fill" type="text" formClass="my-5 mx-5 me-4" msg="Usuário" id="user" onChange={(e) => setName(e.target.value)} />
+            <Form icon="bi bi-person-fill" type="text" formClass="my-5 ms-5 me-4" msg="Usuário" id="user" onChange={(e) => setName(e.target.value)} />
             <Form onClick={togglePasswordMode} icon={`bi ${eyeState}`} type={passwordType} formClass="mb-2 mx-5 me-4" msg="Senha" id="password" onChange={(e) => setPassword(e.target.value)} />
             <Checkbox type="checkbox" checkboxClass="mx-5 mb-4 text-start" msg="Lembre de mim" value="rememberMeChecked" id="rememberMe" />
             <button className="btn btn-primary mt-2 mb-5 btn-lg rounded-pill w-75">Entrar</button>

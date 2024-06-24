@@ -12,8 +12,8 @@ const ConfCadastro = () => {
     return (
         <div>
         <nav className="navbar navbar-expand-lg bg-body-tertiary nav-underline text-decoration-none fixed-top">
-            <div className="container-fluid">
-                <Link to="/" className="navbar-brand fw-semibold me-4" ><img src={logo} className="react-logo" alt="" />J a v a S
+            <div className="container">
+                <Link to="/" className="navbar-brand fw-semibold me-4" ><img src={logo} className="react-logo " alt="" />J a v a S
                     c r i p t
                     .</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"

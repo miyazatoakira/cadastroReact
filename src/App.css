@@ -139,8 +139,13 @@ p{
     border-radius: 15px;
   }
 
-  .form-floating input .bi{
+  .form-floating button{
     position: absolute;
-
-    transform: translateY(-100%);
+    top: 50%;
+    font-size: 2rem;
+    right: 0%;
+    background: none;
+    pointer-events: none;
+    transform: translateY(-50%);
+    z-index: 10000;
   }

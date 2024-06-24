@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Form = ({ type, id, msg, onChange, formClass, isReq }) => {
+const Form = ({ type, id, msg, onChange, formClass, isReq, icon, onClick }) => {
 
     return (
         <div>
@@ -14,7 +14,7 @@ const Form = ({ type, id, msg, onChange, formClass, isReq }) => {
                     onChange={onChange}
 
                 />
-                <i className="bi bi-person-circle"></i>
+                <button onClick={onClick} className={icon}></button>
                 <label className="ms-2" htmlFor={id}>{msg}</label>
             </div>
         </div>

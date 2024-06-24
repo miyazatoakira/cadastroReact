@@ -15,14 +15,32 @@ const Home = () => {
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
   const [ToastColor, setToastColor] = useState("");
+  const [showPass, setShowPass] = useState(false)
+
+  let eyeState = "bi-eye-slash"
+  let passwordType = "password"
+
+
+  const togglePasswordMode = () =>{
+    showPass = !showPass;
+    if(showPass){
+      eyeState = "bi-eye";
+      passwordType = "text"
+    }
+    else{
+      eyeState = "bi-eye-slash"
+      passwordType = "password"
+    }
+  }
 
 
   const handleSubmit = (event) => {
     console.log(name, password)
       if (password === "1234") {
+        let email = `${name}@gmail.com`;
         event.preventDefault();
             // Define o nome no contexto
-        setUserDetails(name);
+        setUserDetails(email, name);
         // Navega para a página de confirmação de cadastro
         navigate('/ConfCadastro');
     }
@@ -65,8 +83,9 @@ const Home = () => {
               <h2 className="h2 mt-5 Home-title text-start ms-5">
                   <img src={viteLogo} alt="Vite Logo" className='me-4' />
                   ENTRAR <img className='react-logo' src={logo} alt="React Logo" style={{width: "2em"}} /></h2>
-                <Form type="text" formClass="my-5 mx-5 me-4" msg="Usuário" id="user" onChange={(e) => setName(e.target.value)}  />
-                <Form type="password" formClass="mb-2 mx-5 me-4" msg="Senha" id="password" onChange={(e) => setPassword(e.target.value)} />
+                <Form icon="bi bi-person-fill" type="text" formClass="my-5 mx-5 me-4" msg="Usuário" id="user" onChange={(e) => setName(e.target.value)}  />
+                <Form onClick={togglePasswordMode} icon={`bi ${eyeState}`} type={passwordType} formClass="mb-2 mx-5 me-4" msg="Senha" id="password" onChange={(e) => setPassword(e.target.value)} />
+
                 <Checkbox type="checkbox" checkboxClass="mx-5 mb-4 text-start" msg="Lembre de mim" value="rememberMeChecked" id="rememberMe" />
                 <button className="btn btn-primary mt-2 mb-5 btn-lg rounded-pill w-75" >Entrar</button>
             </form>

@@ -27,7 +27,7 @@ const Home = () => {
     event.preventDefault();
     console.log(name, password);
 
-    if (password === "1234") {
+    if (password === "1234" && name!="") {
       let email = `${name}@gmail.com`;
       setUserDetails(email, name);
       navigate('/ConfCadastro');

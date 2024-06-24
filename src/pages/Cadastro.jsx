@@ -22,7 +22,7 @@ const Cadastro = () => {
     return (
         <div>
             <div className="container cadastro mt-5">
-                <form className="row text-center was-validated justify-content-center py-4" onSubmit={handleSubmit} novalidated>
+                <form className="row text-center need-validation justify-content-center py-4" onSubmit={handleSubmit} novalidated>
                     <div className="col-10">
                         <h1 className="h1 Home-title text-start">Cadastre-se</h1>
                         <div className="line"></div>
@@ -30,7 +30,7 @@ const Cadastro = () => {
                     <div className="col-10">
                     <div className="input-group mt-4">
                     <span className="input-group-text" id="basic-addon1">@</span>
-                    <input type="text" class="form-control" placeholder="Usuário" aria-label="Username"  onChange={(e) => setName(e.target.value)} aria-describedby="basic-addon1"/>
+                    <input required type="text" class="form-control" placeholder="Usuário" aria-label="Username"  onChange={(e) => setName(e.target.value)} aria-describedby="basic-addon1"/>
                     </div>
                     </div>
                     <div className="col-5">

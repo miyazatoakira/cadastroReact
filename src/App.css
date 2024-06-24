@@ -116,7 +116,7 @@ p{
   padding-right: 2.5%;
   color: #424345;
 }
-.bi:hover{
+.social-icons .bi:hover{
   color: white;
   border: 1px solid white;
   transition: all 0.5s ease;
@@ -149,6 +149,7 @@ p{
     right: 0%;
     background: none;
     pointer-events: none;
+    cursor: pointer;
     transform: translateY(-50%);
     z-index: 10000;
   }

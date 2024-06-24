@@ -12,6 +12,7 @@ const Form = ({ type, id, msg, onChange, formClass, isReq, icon, onClick }) => {
             id={id}
             placeholder={msg}
             onChange={onChange}
+            required
           />
           {icon && (
             <span className="input-group-text" onClick={onClick}>

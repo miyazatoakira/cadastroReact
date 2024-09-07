@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div className='App container-fluid'>
         <Routes>
-          <Route path='/' element={<Home /> }></Route>
+          <Route path='/<cadastroReact>' element={<Home /> }></Route>
           <Route path='/Cadastro' element={<Cadastro/>}></Route>
           <Route path='/ConfCadastro' element={<ConfCadastro/>}></Route>
         </Routes>
